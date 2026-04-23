@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador Red Neuronal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>🧠 Simulador de Red Neuronal</h1>
+
+  <div class="card">
+
+    <div class="grid">
+
+      <div>
+        <label>Capas ocultas</label>
+        <input id="layersInput" value="">
+      </div>
+
+      <div>
+        <label>Entrada</label>
+        <input id="inputData" value="">
+      </div>
+
+      <div>
+        <label>Vector Objetivo</label>
+        <input id="targetData" value="">
+      </div>
+
+      <div>
+        <label>Épocas</label>
+        <input id="epochsInput" value="">
+      </div>
+
+    </div>
+
+    <div class="buttons">
+      <button class="primary" onclick="initNetwork()">Crear</button>
+      <button onclick="forward()">Forward</button>
+      <button onclick="trainEpochs()">Entrenar</button>
+      <button onclick="play()">▶</button>
+      <button onclick="pause()">⏸</button>
+      <button onclick="reset()">Reset</button>
+    </div>
+
+  </div>
+
+  <div class="card canvas-box">
+    <canvas id="networkCanvas"></canvas>
+  </div>
+
+  <div class="info">
+
+    <div class="card small">
+      <h3>Estado</h3>
+      <p id="status">Esperando...</p>
+      <p><strong>Error:</strong> <span id="errorValue">-</span></p>
+    </div>
+
+    <div class="card small">
+      <h3>Gráfica</h3>
+      <canvas id="chart"></canvas>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
